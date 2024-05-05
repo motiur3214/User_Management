@@ -158,5 +158,21 @@ class User
         }
     }
 
+    public function deleteUser(int $userId): bool
+    {
+        // Prepare SQL statement to delete a user by ID
+        $sql = "DELETE FROM users WHERE id = :id";
+        $stmt = $this->connection->prepare($sql);
+        // Bind the user ID parameter
+        $stmt->bindParam(":id", $userId, PDO::PARAM_INT);
 
+        // Execute the delete statement and check for success
+        if ($stmt->execute()) {
+            return true; // Deletion successful
+        } else {
+            // Handle deletion failure (e.g., log the error)
+            error_log("Deletion failed: " . implode(", ", $stmt->errorInfo()));
+            return false;
+        }
+    }
 }

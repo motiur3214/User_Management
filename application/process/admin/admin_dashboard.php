@@ -44,7 +44,6 @@ if (isset($_SESSION['user_id'])) {
     <a href="../logout" class="logout">Logout</a>
 </header>
 <div class="container">
-
     <main>
         <section class="search-filter">
             <form action="" method="post">
@@ -63,7 +62,7 @@ if (isset($_SESSION['user_id'])) {
 
         <?php
         if ($all_users) {
-            echo "<h2>All Users</h2>";
+            echo "<h2>All Users (total: $total_users)</h2>";
             echo "<table>";
             echo "<tr>";
             echo "<th>Name</th>";
@@ -80,7 +79,15 @@ if (isset($_SESSION['user_id'])) {
                 if (isset($user_data["role"])) {
                     echo "<td>" . ($user_data["role"] == 2 ? 'User' : 'Admin') . "</td>"; // Display role if available, otherwise empty string
                 }
-                echo "<td><a href='" . BASE_URL . "/user_update?user_id=" . $user_data['id'] . "'><button class='update-user-btn'>Update</button></a></td>"; // Add Update button
+
+                echo "<td>";
+                echo "<a href='" . BASE_URL . "/user_update?user_id=" . $user_data['id'] . "'><button class='update-user-btn'>Update</button></a>";
+                echo "<form action='../user_delete' method='post' onsubmit='return confirm(`Are you sure you want to delete this account?`)'>";
+                // Hidden confirmation field
+                echo "<input type='hidden' name='user_id' value='" . $user_data['id'] . "'>";
+                echo "<button type='submit' class='delete-user-btn'>Delete</button>";
+                echo "</form>";
+                echo "</td>";
                 echo "</tr>";
             }
 

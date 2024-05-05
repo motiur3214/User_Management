@@ -10,10 +10,6 @@ if (isset($_SESSION['user_id'])) {
 
 // Handle login form submission
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST["email"];
-        $name = $_POST["name"];
-        $password = $_POST["password"];
-
         $user = [
             "name" => $_POST["name"],
             "email" => $_POST["email"],
