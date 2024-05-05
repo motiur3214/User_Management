@@ -1,11 +1,12 @@
-A simple User management System with admin and user dashboard
+A simple User Management System with an admin and user dashboard
+Pull from the development branch 
 
 -Features:
   
   -User:
     
     -Login
-    -LogOut
+    -Logout
     -Update
     -Remove
 
@@ -28,7 +29,7 @@ A simple User management System with admin and user dashboard
 
     -composer install
     -composer dump-autoload
-    -Import given SQL file
+    -Import the given SQL file
     -example-env to .env
     -Database credential in .env
     -Base Url in .env
