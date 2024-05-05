@@ -7,6 +7,7 @@ A simple User Management System with an admin and user dashboard
   -User:
     
     -Login
+    -User info
     -Logout
     -Update
     -Remove
@@ -14,8 +15,8 @@ A simple User Management System with an admin and user dashboard
   -Admin
     
     -Login
-    -Logout
     -UserList
+    -Logout
     -Register New User
     -Update
     -Remove
