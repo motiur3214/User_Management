@@ -19,11 +19,27 @@ if (str_contains($_SERVER['REQUEST_URI'], '/user_management')) {
             // Include the login
             require_once 'application/validation/login.php';
             break;
+        case 'dashboard':
+            // dashboard validation
+            include 'application/validation/dashboard.php';
+            break;
+        case 'admin/dashboard?page=' . $page:
+        case 'admin/dashboard':
+            // Admin dashboard with or without parameter
+            include 'application/process/admin/admin_dashboard.php';
+            break;
+        case 'user/dashboard':
+            // user Dashboard
+            include 'application/process/user/user_dashboard.php';
+            break;
         case 'user_registration':
             // registration route
             include 'application/validation/user_registration.php';
             break;
-
+        case 'logout':
+            // logout route
+            include 'application/validation/logout.php';
+            break;
         default:
             echo "Invalid user_management route";
             break;
