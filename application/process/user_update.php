@@ -6,9 +6,9 @@ $userObj = new User($db);
 // Get the user data by ID
 $userId = $_GET['user_id'];
 $userData = $userObj->getUserById($userId);
-
 // Populate the form input fields with the retrieved user data
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +20,15 @@ $userData = $userObj->getUserById($userId);
 <body>
 
 <div class="login-container">
+    <?php if (isset($_SESSION['errors'])): // Check if errors are present in session ?>
+        <div class="error-message">
+            <ul>
+                <?php foreach ($_SESSION['errors'] as $error): ?>
+                    <li><?php echo $error; ?></li> <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php unset($_SESSION['errors']); // Clear errors after displaying them  ?>
+    <?php endif; ?>
     <form class="login-form" method="post" action="user_update?user_id=<?php echo $_GET['user_id']; ?>">
 
         <div class="input-group">
