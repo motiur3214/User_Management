@@ -167,3 +167,30 @@ footer {
 .pagination li a:hover {
     background-color: #ccc;
 }
+
+.update-user-btn {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.logout { /* Style the logout link */
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.logout:hover { /* Add hover effect */
+    background-color: #ddd;
+}

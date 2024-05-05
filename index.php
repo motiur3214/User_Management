@@ -36,6 +36,10 @@ if (str_contains($_SERVER['REQUEST_URI'], '/user_management')) {
             // registration route
             include 'application/validation/user_registration.php';
             break;
+        case 'user_update?user_id=' . $_GET['user_id']:
+            // registration route
+            include 'application/validation/user_update.php';
+            break;
         case 'logout':
             // logout route
             include 'application/validation/logout.php';

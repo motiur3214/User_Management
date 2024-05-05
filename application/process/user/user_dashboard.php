@@ -24,8 +24,8 @@ if (isset($_SESSION['user_id'])) {
 <body>
 <div class="container">
     <header>
-        <h1 style="">Welcome, <?php echo $user_data["name"]; ?>!</h1>
-        <a href="../logout">Logout</a>
+        <h1 style="">Welcome, <span style="color: #3e8e41"><?php echo $user_data["name"]; ?>!</span></h1>
+        <a href="../logout" class="logout">Logout</a>
     </header>
     <main>
         <section class="user-info">
@@ -33,7 +33,11 @@ if (isset($_SESSION['user_id'])) {
             <ul>
                 <li>Email: <?php echo $user_data["email"]; ?></li>
                 <li>Role: <?php echo $user_data["role"]; ?></li>
+
             </ul>
+            <a href="<?php echo BASE_URL . "/user_update?user_id=" . $user_data["id"]; ?>">
+                <button class='update-user-btn'>Update</button>
+            </a>
         </section>
     </main>
     <footer>

@@ -9,14 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 // Handle login form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $name = $_POST["name"];
-    $password = $_POST["password"];
 
     $user = [
-        "name" => $name,
-        "email" => $email,
-        "password" => password_hash($password, PASSWORD_DEFAULT),
+        "name" => $_POST["name"],
+        "email" => $_POST["email"],
+        "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
         "role" => USER_ROLE["user"]
     ];
 
@@ -29,11 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (isset($_SESSION['user_role'])) {
         if ($_SESSION['user_role'] == USER_ROLE['admin']) {
-        header("Location:" . BASE_URL . "/admin/dashboard");
+            header("Location:" . BASE_URL . "/admin/dashboard");
         } else {
-        header("Location:" . BASE_URL . "/user/dashboard");
+            header("Location:" . BASE_URL . "/user/dashboard");
         }
     }
-  exit();
+    exit();
 }
 

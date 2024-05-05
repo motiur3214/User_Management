@@ -24,7 +24,7 @@ h1 {
     margin: 0;
 }
 
-a { /* Style the logout link */
+.logout { /* Style the logout link */
     color: #000;
     text-decoration: none;
     font-weight: bold;
@@ -33,7 +33,7 @@ a { /* Style the logout link */
     border-radius: 5px;
 }
 
-a:hover { /* Add hover effect */
+.logout:hover { /* Add hover effect */
     background-color: #ddd;
 }
 
@@ -47,7 +47,7 @@ section {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #5bcc7a; /* Light background for content */
+    background-color: #b8f8c9; /* Light background for content */
 }
 
 section h2 {
@@ -68,4 +68,17 @@ footer {
     background-color: #f0f0f0;
     padding: 10px;
     text-align: center;
+}
+.update-user-btn {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 3px;
 }

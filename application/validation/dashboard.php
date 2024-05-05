@@ -8,7 +8,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 $role = array_search($_SESSION['user_role'], USER_ROLE);
 
-if ( $role == "admin") {
+if ($role == "admin") {
     header("Location:" . BASE_URL . "/admin/dashboard");
     exit();
 }
