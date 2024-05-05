@@ -39,9 +39,20 @@ A simple User Management System with an admin and user dashboard
 
     -admin
        -admin@gmail.com 
-       -123456
+       -12345678
 
     -user
        -user1@gmail.com
-       -123456
+       -12345678
 
+ -technical features
+    
+    -handled Wrong routes
+    -validations
+    -PDO
+    -Singletone for DB
+    -Dependency Injection
+    -Some Unit test
+    
+
+ 

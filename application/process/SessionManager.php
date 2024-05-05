@@ -3,7 +3,7 @@
 class SessionManager
 {
 
-    public function logout()
+    public function logout():bool
     {
         session_start();
 

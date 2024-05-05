@@ -52,6 +52,24 @@ class User
         }
     }
 
+    public function isEmailExists($email)
+    {
+        try {
+
+            $stmt = $this->connection->prepare("SELECT id FROM users WHERE email = :email");
+
+            $stmt->bindParam(':email', $email, PDO::PARAM_STR); // Specify string binding for email
+
+            $stmt->execute();
+
+            $rowCount = $stmt->rowCount(); // Count rows returned
+
+            return $rowCount > 0;  // Return true if email exists (at least one row)
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
     public function getAllUsers($offset = 0, $limit = 10) // Add optional parameters
     {
         try {
@@ -93,9 +111,9 @@ class User
             $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
             $stmt->bindParam(':searchTerm', $searchTerm);
             $stmt->execute();
-
+            $fetched_users = $stmt->fetch(PDO::FETCH_ASSOC);
             $users = array();
-            while ($user = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            foreach ($fetched_users as $user) {
                 $users[] = $user; // Add user data to array
             }
             return $users; // Return array of matching user data
