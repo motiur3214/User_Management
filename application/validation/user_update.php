@@ -13,8 +13,6 @@ if (isset($_SESSION['user_id'])) {
         $user = [
             "name" => $_POST["name"],
             "email" => $_POST["email"],
-            "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
-            "role" => USER_ROLE["user"],
             "id" => $_POST["user_id"]
         ];
 

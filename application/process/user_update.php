@@ -30,9 +30,6 @@ $userData = $userObj->getUserById($userId);
             <input type="text" id="email" name="email" placeholder="Email" value="<?php echo $userData['email']; ?>"
                    required>
         </div>
-        <div class="input-group">
-            <input type="password" id="password" name="password" placeholder="Password" value="" required>
-        </div>
         <input type="hidden" name="user_id" value="<?php echo $userId; ?>"> <!-- Include a hidden field for user ID -->
         <button type="submit">Update</button>
     </form>

@@ -31,8 +31,8 @@ if (isset($_SESSION['user_id'])) {
         <section class="user-info">
             <h2>User Information</h2>
             <ul>
+                <li>Name: <?php echo $user_data["name"]; ?></li>
                 <li>Email: <?php echo $user_data["email"]; ?></li>
-                <li>Role: <?php echo $user_data["role"]; ?></li>
 
             </ul>
             <a href="<?php echo BASE_URL . "/user_update?user_id=" . $user_data["id"]; ?>">
