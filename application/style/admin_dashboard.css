@@ -167,6 +167,7 @@ footer {
 .pagination li a:hover {
     background-color: #ccc;
 }
+
 /* ... existing styles ... */
 
 .action td {
@@ -188,7 +189,8 @@ footer {
     cursor: pointer;
     border-radius: 3px;
 }
- .delete-user-btn{
+
+.delete-user-btn {
     background-color: #f1344b; /* Green background */
     border: none;
     color: white;
@@ -201,6 +203,7 @@ footer {
     cursor: pointer;
     border-radius: 3px;
 }
+
 .logout { /* Style the logout link */
     color: #000;
     text-decoration: none;
