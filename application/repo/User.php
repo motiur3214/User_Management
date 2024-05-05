@@ -111,9 +111,9 @@ class User
             $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
             $stmt->bindParam(':searchTerm', $searchTerm);
             $stmt->execute();
-
+            $fetched_users = $stmt->fetch(PDO::FETCH_ASSOC);
             $users = array();
-            while ($user = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            foreach($fetched_users as $user) {
                 $users[] = $user; // Add user data to array
             }
             return $users; // Return array of matching user data
