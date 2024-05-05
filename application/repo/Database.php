@@ -11,7 +11,7 @@ class Database
 
     private function __construct()
     {
-      
+
         try {
             $this->conn = new PDO("mysql:host=$this->servername;dbname=$this->database", $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -19,7 +19,7 @@ class Database
             echo "Connection failed: " . $e->getMessage();
         }
     }
-    
+
     public static function getInstance(): Database
     {
         if (self::$instance === null) {

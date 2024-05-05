@@ -136,4 +136,27 @@ class User
             echo "Error: " . $e->getMessage();
         }
     }
+
+    public function updateUser(array $user): bool
+    {
+        // Prepare SQL statement (using parameterized query for security)
+        $sql = "UPDATE users SET name = :name, email = :email, password = :password, role = :role WHERE id = :id";
+        $stmt = $this->connection->prepare($sql);
+        // Bind values to prevent SQL injection vulnerabilities
+        $stmt->bindParam(":name", $user["name"]);
+        $stmt->bindParam(":email", $user["email"]);
+        $stmt->bindParam(":password", $user["password"]);
+        $stmt->bindParam(":role", $user["role"], PDO::PARAM_INT);
+        $stmt->bindParam(":id", $user["id"], PDO::PARAM_INT);
+        // Execute the statement and check for success
+        if ($stmt->execute()) {
+            return true; // Update successful
+        } else {
+            // Handle update failure (e.g., log the error)
+            error_log("Update failed: " . implode(", ", $stmt->errorInfo()));
+            return false;
+        }
+    }
+
+
 }

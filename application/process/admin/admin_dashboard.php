@@ -40,8 +40,8 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
 <header>
-    <h1 style="">Welcome, <?php echo $user_admin["name"]; ?>!</h1>
-    <a href="../logout">Logout</a>
+    <h1 style="">Welcome, <span style="color: #3e8e41"><?php echo $user_admin["name"]; ?>!</span></h1>
+    <a href="../logout" class="logout">Logout</a>
 </header>
 <div class="container">
 
@@ -61,7 +61,6 @@ if (isset($_SESSION['user_id'])) {
             </a>
         </section>
 
-
         <?php
         if ($all_users) {
             echo "<h2>All Users</h2>";
@@ -70,6 +69,7 @@ if (isset($_SESSION['user_id'])) {
             echo "<th>Name</th>";
             echo "<th>Email</th>";
             echo "<th>Role</th>";
+            echo "<th>Action</th>";
             echo "</tr>";
 
             // Loop through all users (filtered or unfiltered) and display information in a table
@@ -80,6 +80,7 @@ if (isset($_SESSION['user_id'])) {
                 if (isset($user_data["role"])) {
                     echo "<td>" . ($user_data["role"] == 2 ? 'User' : 'Admin') . "</td>"; // Display role if available, otherwise empty string
                 }
+                echo "<td><a href='" . BASE_URL . "/user_update?user_id=" . $user_data['id'] . "'><button class='update-user-btn'>Update</button></a></td>"; // Add Update button
                 echo "</tr>";
             }
 
