@@ -113,7 +113,7 @@ class User
             $stmt->execute();
             $fetched_users = $stmt->fetch(PDO::FETCH_ASSOC);
             $users = array();
-            foreach ($fetched_users as $user) {
+            foreach($fetched_users as $user) {
                 $users[] = $user; // Add user data to array
             }
             return $users; // Return array of matching user data

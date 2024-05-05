@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php'; // Load Composer's autoloader
-$dotenv = Dotenv\Dotenv::createImmutable("C:/laragon/www/user_management");
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 // Include necessary files
 require_once __DIR__ . '/application/config.php';
