@@ -7,11 +7,13 @@ body {
     flex-direction: column; /* Display children vertically */
     min-height: 100vh;
 }
+
 .container {
     display: flex;
     flex-direction: column;
     flex: 1; /* Grow to fill available space */
 }
+
 header {
     background-color: #f0f0f0;
     padding: 20px;
@@ -69,8 +71,23 @@ footer {
     padding: 10px;
     text-align: center;
 }
+
 .update-user-btn {
     background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.delete-user-btn {
+    background-color: #f1344b; /* Green background */
     border: none;
     color: white;
     padding: 5px 10px;

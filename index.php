@@ -12,6 +12,7 @@ if (str_contains($_SERVER['REQUEST_URI'], '/user_management')) {
     // Extract the remaining part of the URI after /user_management
     $uri_segment = explode('/user_management/', $_SERVER['REQUEST_URI'])[1] ?? '';
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $user_id = $_GET['user_id'] ?? 0;
     // Handle specific routes within /user_management
     switch ($uri_segment) {
         case 'login':
@@ -36,9 +37,13 @@ if (str_contains($_SERVER['REQUEST_URI'], '/user_management')) {
             // registration route
             include 'application/validation/user_registration.php';
             break;
-        case 'user_update?user_id=' . $_GET['user_id']:
+        case 'user_update?user_id=' . $user_id:
             // registration route
             include 'application/validation/user_update.php';
+            break;
+        case 'user_delete':
+            // registration route
+            include 'application/validation/user_delete.php';
             break;
         case 'logout':
             // logout route
