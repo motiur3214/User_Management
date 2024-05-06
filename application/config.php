@@ -7,7 +7,7 @@ define("DB_USERNAME", $_ENV['DATABASE_USER']);
 define("DB_PASSWORD", $_ENV['DATABASE_PASSWORD']);
 define("BASE_URL", $_ENV['BASE_URL']);
 
-//uncomment this portion if env is not loading 
+//uncomment this portion if env is not loading
 //const DB_HOST = 'localhost';
 //const DB_NAME = 'user_management';
 //const DB_USERNAME = 'root';
