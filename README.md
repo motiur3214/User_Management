@@ -55,5 +55,8 @@ A simple User Management System with an admin and user dashboard
     -Dependency Injection
     -Some Unit test
     
-
+ -Note 
+    
+    if loading .env gives error please give DB credential on config.php manually
+    and comment out previously Defined database constants
  

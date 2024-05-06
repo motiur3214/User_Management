@@ -6,7 +6,7 @@ vendor/
 *.iml
 
 # dotenv file for environment variables
-.env
+application/.env
 
 # Coverage reports
 coverage/

@@ -1,6 +1,7 @@
 <?php
-
-//if loading config is giving error please give DB credentials to Database.php statically
+// Load Composer's autoloader
+//if loading config is giving error please give DB credentials to config.php statically
+require_once $_SERVER['DOCUMENT_ROOT'] . 'vendor/autoload.php';
 require_once dirname(__DIR__) . '/config.php';
 require_once dirname(__DIR__) . '/repo/Database.php';
 require_once dirname(__DIR__) . '/repo/User.php';
@@ -14,6 +15,9 @@ class UserTest extends TestCase
 
     public function setUp(): void
     {
+
+        $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+        $dotenv->load();
         // Create a mock Database class
         $this->mockDatabase = $this->createMock(Database::class);
     }
