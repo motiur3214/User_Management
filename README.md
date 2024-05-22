@@ -32,7 +32,7 @@ A simple User Management System with an admin and user dashboard
     -composer install
     -composer dump-autoload
     -Import the SQL file(inside sql folder)
-    -example-env to .env
+    -example-env to .env and put inside application folder
     -Database credential in .env
     -Base Url in .env
  
